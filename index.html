@@ -24,6 +24,7 @@
          "id": "viewer",
          "layout": "1x1",
          "data": [
+           { "manifestUri": "https://iiif.archivelab.org/iiif/earlyenglishwate00holmuoft/manifest.json", "location":"Internet Archive"},
            { "manifestUri": "https://iiif.lib.harvard.edu/manifests/drs:48309543", "location": "Harvard University"},
            { "manifestUri": "https://iiif.lib.harvard.edu/manifests/drs:5981093", "location": "Harvard University"},
            { "manifestUri": "https://iiif.lib.harvard.edu/manifests/via:olvwork576793", "location": "Harvard University"},
@@ -69,7 +70,14 @@
            { "manifestUri": "http://media.nga.gov/public/manifests/nga_highlights.json", "location": "National Gallery of Art"}
          ],
          "windowObjects": [],
-         "annotationEndpoint": { "name":"Local Storage", "module": "LocalStorageEndpoint" }
+         "annotationEndpoint": {
+           "name":"YCBA Annotation Storage",
+           "module": "YCBAEndpoint",
+           "options": {
+             "baseUrl": "https://ycba-annotations-dev.herokuapp.com/annotation/",
+             "searchUrl": "http://ycba-annotations-dev.herokuapp.com/search"
+           }
+         }
        });
      });
     </script>
